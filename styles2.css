@@ -1,0 +1,176 @@
+/* Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #0B0C10;
+    padding: 20px;
+    overflow-y: hidden;
+    text-align: center;
+}
+
+
+.right-column {
+    width: 60vw;
+    margin-left: 40vw;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+.right-column::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Global Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1F2833;
+    color: #fff;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: #0B0C10;
+    color: #66FCF1;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+.topnav a:hover {
+    background-color: #45A29E;
+}
+
+
+/* Navigation Styling */
+.topnav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topnav a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.topnav a.active-section {
+    background-color: #45A29E;
+    font-weight: bold;
+}
+
+
+
+.topnav a.active {
+    background-color: #45A29E;
+    color: white;
+}
+
+/* Main Content */
+.content {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 1000px;
+}
+
+/* Section Styling */
+.container {
+    background-color: #1F2833;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #66FCF1;
+    margin-bottom: 1rem;
+}
+
+.container h3 {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    text-align: left;
+    text-indent: 20px;
+}
+
+/* List Styles */
+.container ul {
+    list-style-type: disc;
+    padding-left: 0;
+    margin: 0 auto; /* Center the list */
+    text-align: left; /* Left-align text */
+    width: 60%; /* Adjust width for better centering */
+}
+
+.container li {
+    margin: 5px 0;
+}
+
+/* Links */
+.container a {
+    color: #45A29E;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #0B0C10;
+    color: #45A29E;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 50px; /* Adjust size */
+    height: 50px; 
+    margin-left: 5px; /* Space between text and icon */
+    vertical-align: middle;
+}
