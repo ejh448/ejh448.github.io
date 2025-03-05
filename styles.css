@@ -1,72 +1,127 @@
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #1F2833;
-    color: #fff;
+    box-sizing: border-box;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background-color: #116466;
+    padding: 20px;
+    overflow-y: hidden;
+    text-align: center;
+    z-index: 1;
+}
+
+.left-column::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #116466;
+    z-index: -1;
+}
+
+.right-column {
+    margin-left: 40vw;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.right-column::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color:aliceblue;
+    background-color: #116466;
     line-height: 1.6;
 }
 
-/* Header Styles */
-header {
-    background-color: #0B0C10;
-    color: #66FCF1;
-    text-align: center;
-    padding: 2rem;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-header h1 {
-    font-size: 3rem;
-    margin: 0.5rem 0;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-/* Navigation Styles */
 .topnav {
-    background-color: #1F2833;
     display: flex;
-    justify-content: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 .topnav a {
-    color: #f2f2f2;
-    padding: 16px 20px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding-left: 10px;
+    color: #22c7c9 !important;
+
+}
+
+.topnav a::before {
+    content: "——";
+    display: inline-block;
+    width: 25px; 
+    transition: width 0.3s ease;
+    margin-right: 15px;
+    color: #22c7c9;
+}
+
+.topnav a.active::before {
+    width: 50px; /* Increased width when active */
+    color: aliceblue;
+}
+
+.topnav a:hover::before {
+    width: 50px; /* Increases the width of the dash on hover */
+    color: aliceblue; /* Changes dash color on hover */
 }
 
 .topnav a:hover {
-    background-color: #45A29E;
+    text-decoration: none; /* Removes underline on hover */
+    padding-left: 25px; /* Shifts the text to the right */
 }
 
 .topnav a.active {
-    background-color: #45A29E;
-    color: white;
+    background-color: transparent; /* Ensures no background highlight on hover or active */
+    text-decoration: none; /* Removes underline on active state */
+    color: aliceblue !important;
 }
-
-/* Main Content Styles */
+.topnav a:hover, .topnav a:active {
+    text-decoration: none !important; /* Force no underline */
+}
 .content {
     margin: 0 auto;
     padding: 2rem;
     max-width: 1000px;
 }
 
-/* Section Styles */
 .container {
-    background-color: #1F2833;
+    background-color: #116466;
     padding: 2rem;
     margin: 1rem 0;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .container h2 {
@@ -87,13 +142,12 @@ header p {
     text-indent: 20px;
 }
 
-/* Centering the list and left-aligning the text in list items */
 .container ul {
-    list-style-type:disc;
+    list-style-type: disc;
     padding-left: 0;
-    margin: 0 auto; /* Center the list */
-    text-align: left; /* Left-align the list text */
-    width: 60%; /* Adjust width for better centering */
+    margin: 0 auto;
+    text-align: left;
+    width: 60%;
 }
 
 .container li {
@@ -110,7 +164,6 @@ header p {
     text-decoration: underline;
 }
 
-/* Footer Styles */
 footer {
     background-color: #0B0C10;
     color: #45A29E;
@@ -120,9 +173,17 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 .social-icon {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px; /* Ensure the aspect ratio is preserved */
-    margin-left: 5px; /* Space between the text and the icon */
-    vertical-align: middle; /* Align the icon with the text */
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.horizontal-social {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
 }
