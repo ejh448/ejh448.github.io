@@ -155,12 +155,56 @@ iframe {
     border: none;
 }
 
+/* Media Queries for Mobile */
 @media screen and (max-width: 768px) {
     .left-column {
         width: 100vw;
+        position: static; /* Make left column stack on top */
+        height: auto; /* Allow left column to resize naturally */
     }
 
     .right-column {
         margin-left: 0;
+        margin-top: 20px; /* Add space between left and right columns */
     }
+
+    /* If it's a portrait orientation (mobile vertical), stack the columns */
+    @media screen and (max-width: 480px) {
+        .left-column {
+            order: 1; /* Left column comes first (on top) */
+        }
+
+        .right-column {
+            order: 2; /* Right column comes second (at the bottom) */
+        }
+    }
+}
+
+/* Style the container to be a horizontal row */
+.horizontal-skills {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px; /* Space between skills */
+    justify-content: center; /* Center the skills horizontally */
+    align-items: center; /* Align skills vertically in the middle */
+    margin-top: 20px; /* Space above the skill row */
+}
+
+/* Style for each skill as a rounded "button" */
+.skill {
+    padding: 10px 20px; /* Some padding inside the skill "button" */
+    background-color: #3498db; /* Default background color */
+    border-radius: 30px; /* Rounded corners */
+    color: #fff; /* Text color */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Transform text to uppercase */
+    font-size: 8px; /* Font size for readability */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
+    cursor: default; /* Prevent the cursor from changing to pointer */
+}
+
+/* Hover effect to highlight the skill */
+.skill:hover {
+    background-color: #3498db; /* Highlight color */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
