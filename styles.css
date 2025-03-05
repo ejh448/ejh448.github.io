@@ -180,20 +180,22 @@ iframe {
     }
 }
 
-/* Style the container to be a horizontal row */
+/* Ensure the horizontal-skills container has proper alignment */
 .horizontal-skills {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* Allow wrapping of skills to next row */
     gap: 20px; /* Space between skills */
-    justify-content: center; /* Center the skills horizontally */
+    justify-content: flex-start; /* Align items to the left after wrapping */
     align-items: center; /* Align skills vertically in the middle */
     margin-top: 20px; /* Space above the skill row */
+    padding: 10px; /* Padding around the skill row */
+    overflow: hidden; /* Prevent overflow of content */
 }
 
-/* Style for each skill as a rounded "button" */
+/* Style for each skill */
 .skill {
     padding: 10px 20px; /* Some padding inside the skill "button" */
-    background-color: #3498db; /* Default background color */
+    background-color: #22c7c9; /* Default background color */
     border-radius: 30px; /* Rounded corners */
     color: #fff; /* Text color */
     font-weight: bold; /* Make the text bold */
@@ -201,10 +203,11 @@ iframe {
     font-size: 8px; /* Font size for readability */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transition */
     cursor: default; /* Prevent the cursor from changing to pointer */
+    white-space: nowrap; /* Prevent text from breaking onto a new line */
 }
 
 /* Hover effect to highlight the skill */
 .skill:hover {
-    background-color: #3498db; /* Highlight color */
+    background-color: #2980b9; /* Highlight color */
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
