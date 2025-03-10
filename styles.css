@@ -252,6 +252,13 @@ h3 {
     .left-column h2 {
         font-size: 1.5rem;
     }
+     /* Remove padding for lists on mobile */
+    ul {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
